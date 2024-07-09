@@ -84,10 +84,10 @@ const App = () => {
         case '1/x':
           setInput((1 / value).toString());
           break;
-        case '2√x':
+        case '²√x':
           setInput((Math.sqrt(value)).toString());
           break;
-        case '3√x':
+        case '³√x':
           setInput((Math.cbrt(value)).toString());
           break;
         case 'y√x':
@@ -119,13 +119,16 @@ const App = () => {
           setInput(Math.PI.toString());
           break;
         case 'Rand':
-          setInput(Math.random().toString());
+          setInput(Math.floor(Math.random()*10).toString());
           break;
         case '2nd':
           setSecondFunction(!secondFunction);
           break;
         case 'Rad':
           setAngleMode(angleMode === 'deg' ? 'rad' : 'deg');
+          break;
+        case 'EE':
+          setInput(value.toExponential());
           break;
         default:
           break;
@@ -139,7 +142,7 @@ const App = () => {
     <>
       <div className="min-h-screen flex items-center justify-center ">
         <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden">
-          {/* input feild to eneter the value and get the result  */}
+          {/* input feild to eneter the value and get the result  and set the result*/}
           <div >
             <input
               type="text"
