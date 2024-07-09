@@ -137,10 +137,10 @@ const App = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center ">
         <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden">
           {/* input feild to eneter the value and get the result  */}
-          <div className="pb-1">
+          <div >
             <input
               type="text"
               value={input}
@@ -199,9 +199,8 @@ const App = () => {
                     <button
                       className={`w-16 h-16 text-2xl text-white ${['4', '5', '6'].includes(item) ? 'bg-gray-800' : index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
-                        if (secondFunction && ['1/x','²√x', '³√x', 'ln', 'log10'].includes(item)) {
+                        if (['1/x', '²√x', '³√x', 'y√x', 'ln', 'log10'].includes(item)) {
                           handleScientific(item);
-                          setSecondFunction(false);
                         } else {
                           handleClick(item);
                         }
@@ -218,9 +217,8 @@ const App = () => {
                     <button
                       className={`w-16 h-16 text-2xl text-white ${['1', '2', '3'].includes(item) ? 'bg-gray-800' : index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
-                        if (['x2', 'x3', 'xy', 'ex', '10x'].includes(item)) {
+                        if (['x!', 'sin', 'cos', 'tan', 'e', 'EE'].includes(item)) {
                           handleScientific(item);
-                          setSecondFunction(false);
                         } else {
                           handleClick(item);
                         }
@@ -237,7 +235,7 @@ const App = () => {
                     <button
                       className="w-16 h-16 bg-gray-700 text-2xl text-white"
                       onClick={() => {
-                        if (['π', 'Rad'].includes(item)) {
+                        if (['Rad', 'sinh', 'cosh', 'tanh', 'π', 'Rand'].includes(item)) {
                           handleScientific(item);
                         } else {
                           handleClick(item);
