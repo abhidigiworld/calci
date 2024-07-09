@@ -181,9 +181,8 @@ const App = () => {
                       //here we are using the include functionalty of the js to check if the if the numeric value there we are assigning the background colors according to it 
                       className={`w-16 h-16 text-2xl text-white ${['7', '8', '9'].includes(item) ? 'bg-gray-800' : index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
-                        if (secondFunction && ['sin', 'cos', 'tan'].includes(item)) {
+                        if (['2nd', 'x²', 'x³', 'xy', 'ex', '10x'].includes(item)) {
                           handleScientific(item);
-                          setSecondFunction(false);
                         } else {
                           handleClick(item);
                         }
@@ -200,7 +199,7 @@ const App = () => {
                     <button
                       className={`w-16 h-16 text-2xl text-white ${['4', '5', '6'].includes(item) ? 'bg-gray-800' : index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
-                        if (secondFunction && ['2√x', '3√x', 'ln', 'log10'].includes(item)) {
+                        if (secondFunction && ['1/x','²√x', '³√x', 'ln', 'log10'].includes(item)) {
                           handleScientific(item);
                           setSecondFunction(false);
                         } else {
@@ -219,7 +218,7 @@ const App = () => {
                     <button
                       className={`w-16 h-16 text-2xl text-white ${['1', '2', '3'].includes(item) ? 'bg-gray-800' : index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
-                        if (secondFunction && ['x2', 'x3', 'xy', 'ex', '10x'].includes(item)) {
+                        if (['x2', 'x3', 'xy', 'ex', '10x'].includes(item)) {
                           handleScientific(item);
                           setSecondFunction(false);
                         } else {
