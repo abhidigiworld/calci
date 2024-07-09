@@ -6,6 +6,8 @@ const App = () => {
   const [secondFunction, setSecondFunction] = useState(false);
   const [angleMode, setAngleMode] = useState('deg');
 
+
+  //here i use the useeffect so whenever input hit it will work according to it
   useEffect(() => {
     const handleKeyUp = (event) => {
       const { key } = event;
@@ -21,12 +23,13 @@ const App = () => {
     return () => window.removeEventListener('keyup', handleKeyUp);
   }, [input]);
 
+  //here i use the handelclick so whenever the user hit the button hit it will add into the input field
   const handleClick = (value) => {
     if (value === '÷') value = '/';
     setInput((prevInput) => prevInput + value);
   };
 
-
+  //calculate function i also use the try and catch block to handel the error
   const handleCalculate = () => {
     try {
       setInput(eval(input).toString());
@@ -35,6 +38,7 @@ const App = () => {
     }
   };
 
+  //in this handelmemory i hadel all the memory function and oone more thing in it  like i add the ac in the same to clear all the inputs
   const handleMemory = (action) => {
     switch (action) {
       case 'MC':
@@ -55,6 +59,8 @@ const App = () => {
         break;
     }
   };
+
+  //hadeling the scientific calcultor function here using math
 
   const handleScientific = (func) => {
     try {
@@ -133,6 +139,7 @@ const App = () => {
     <>
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden">
+          {/* input feild to eneter the value and get the result  */}
           <div className="pb-1">
             <input
               type="text"
@@ -141,12 +148,16 @@ const App = () => {
               readOnly
             />
           </div>
+
+          {/* putting all the buttons in the table  */}
           <table className="w-full">
             <tbody>
               <tr>
+                {/* using the map function to insert the button in the row */}
                 {['(', ')', 'MC', 'M+', 'M-', 'MR', 'AC', '+/-', '%', '÷'].map((item, index) => (
                   <td key={item}>
                     <button
+                      // checking if the index is last index it give the diffrent colour
                       className={`w-16 h-16 text-2xl text-white ${index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
                         if (['AC', 'MC', 'M+', 'M-', 'MR'].includes(item)) {
@@ -167,6 +178,7 @@ const App = () => {
                 {['2nd', 'x²', 'x³', 'xy', 'ex', '10x', '7', '8', '9', '*'].map((item, index) => (
                   <td key={item}>
                     <button
+                      //here we are using the include functionalty of the js to check if the if the numeric value there we are assigning the background colors according to it 
                       className={`w-16 h-16 text-2xl text-white ${['7', '8', '9'].includes(item) ? 'bg-gray-800' : index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
                         if (secondFunction && ['sin', 'cos', 'tan'].includes(item)) {
