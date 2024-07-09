@@ -149,7 +149,7 @@ const App = () => {
                     <button
                       className={`w-16 h-16 text-2xl text-white ${index === 9 ? 'bg-yellow-500' : 'bg-gray-700'}`}
                       onClick={() => {
-                        if (['C', 'MC', 'M+', 'M-', 'MR'].includes(item)) {
+                        if (['AC', 'MC', 'M+', 'M-', 'MR'].includes(item)) {
                           handleMemory(item);
                         } else if (item === '+/-') {
                           setInput((parseFloat(input) * -1).toString());
